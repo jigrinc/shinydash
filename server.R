@@ -22,15 +22,16 @@ server <- function(input, output, session) {
 
 	t <- paste0('Principales 30 escuelas (representan ', n_top, ' encuestados de ', n_total,')')
 
+	output$queryText <- renderText({
+			query <- parseQueryString(session$clientData$url_search)
+			paste(names(query), query, sep = "=", collapse=", ")
+		})
+
 	output$barsEscuela <- renderChart({
 		a <- rHighcharts:::Chart$new()
 		a$chart(height=900, type = "bar")
 		a$plotOptions(column = list(stacking = "normal"))
 		a$title(text = paste0('Principales 30 preparatorias (representan ', n_top, ' encuestados de ', n_total,')'))
-		a$subtitle(text=renderText({
-			query <- parseQueryString(session$clientData$url_search)
-			paste(names(query), query, sep = "=", collapse=", ")
-		}))		
 		a$yAxis(title = list(text = "Encuestados"))
 		a$xAxis(categories = head(aux, 30)$Preparatoria)
 		a$data(head(aux, 30)$Encuestados)
