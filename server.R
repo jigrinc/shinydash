@@ -11,7 +11,7 @@ library(rHighcharts)
 
 server <- function(input, output, session) {
 	s_programa <- "Tus datos: "
-	s_fechas <- session$clientData$url_search
+	s_fechas <- renderText({session$clientData$url_search})
 
 	aux <- toupper(letters) %>% expand.grid(p1=., p2=., stringsAsFactors=F) 
 	aux <- paste0('Escuela ', aux$p1, aux$p2) 
