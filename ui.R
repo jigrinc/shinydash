@@ -1,4 +1,5 @@
 library(shinydashboard)
+library(rCharts)
 
 ui <- dashboardPage(
   dashboardHeader(disable = TRUE),
