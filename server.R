@@ -8,8 +8,8 @@ library(rCharts)
 library(jsonlite)
 library(rHighcharts)
 
-s_programa <- "Hola"
-s_fechas <- "mundo"
+s_programa <- "Tus datos: "
+s_fechas <- session$clientData$url_search
 
 server <- function(input, output) {
 	aux <- toupper(letters) %>% expand.grid(p1=., p2=., stringsAsFactors=F) 
