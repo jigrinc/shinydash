@@ -7,7 +7,7 @@ ui <- dashboardPage(
   dashboardBody( 
   	fluidRow(verbatimTextOutput("queryText")),
     fluidRow(
-        box(showOutput("barsEscuela", "highcharts")),
+        box(showOutput("chrtEscuela", "highcharts")),
         box(dataTableOutput('tablEscuela'))
     )
   )
