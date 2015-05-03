@@ -16,7 +16,7 @@ server <- function(input, output, session) {
 		paste(names(query), query, sep = "=", collapse=", ")
 	})
 	output$chartEscuela <- renderChart({
-		chartEscuela
+		chrtEscuela
 	})
 	output$tablEscuela <- renderDataTable({
     	tablEscuela
