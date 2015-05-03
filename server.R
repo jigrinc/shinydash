@@ -10,7 +10,7 @@ library(rHighcharts)
 
 
 server <- function(input, output, session) {
-	source(file='~/shinydash/src_encuesta.R')
+	source(file='src_encuesta.R')
 	output$queryText <- renderText({
 		query <- parseQueryString(session$clientData$url_search)
 		paste(names(query), query, sep = "=", collapse=", ")
