@@ -15,7 +15,7 @@ server <- function(input, output, session) {
 		query <- parseQueryString(session$clientData$url_search)
 		paste(names(query), query, sep = "=", collapse=", ")
 	})
-	output$chartEscuela <- renderChart({
+	output$chrtEscuela <- renderChart({
 		chrtEscuela
 	})
 	output$tablEscuela <- renderDataTable({
